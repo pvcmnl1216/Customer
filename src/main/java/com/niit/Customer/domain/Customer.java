@@ -13,13 +13,13 @@ public class Customer {
     @Id
     private int customerId;
     private String customerName;
-    private long customerPhoneNo;
+    private String customerPhoneNo;
     private Product product;
 
     public Customer() {
     }
 
-    public Customer(int customerId, String customerName, long customerPhoneNo, Product product) {
+    public Customer(int customerId, String customerName, String customerPhoneNo, Product product) {
         this.customerId = customerId;
         this.customerName = customerName;
         this.customerPhoneNo = customerPhoneNo;
@@ -42,11 +42,11 @@ public class Customer {
         this.customerName = customerName;
     }
 
-    public long getCustomerPhoneNo() {
+    public String getCustomerPhoneNo() {
         return customerPhoneNo;
     }
 
-    public void setCustomerPhoneNo(long customerPhoneNo) {
+    public void setCustomerPhoneNo(String customerPhoneNo) {
         this.customerPhoneNo = customerPhoneNo;
     }
 

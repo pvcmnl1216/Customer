@@ -8,6 +8,6 @@ import java.util.List;
 
 public interface CustomerRepository extends MongoRepository<Customer,Integer> {
 
-    @Query("{'customerName':{$in:[?0]}}")
+    @Query("{'product.productName':{$in:[?0]}}")
     public List<Customer> getAllTheDetailsWhoHaveBoughtSamsung(String productName);
 }
