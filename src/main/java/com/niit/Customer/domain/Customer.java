@@ -55,4 +55,14 @@ public class Customer {
     public void setProduct(Product product) {
         this.product = product;
     }
+
+    @Override
+    public String toString() {
+        return "Customer{" +
+                "customerId=" + customerId +
+                ", customerName='" + customerName + '\'' +
+                ", customerPhoneNo=" + customerPhoneNo +
+                ", product=" + product +
+                '}';
+    }
 }
