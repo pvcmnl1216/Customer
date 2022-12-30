@@ -34,10 +34,10 @@ public class CustomerServiceImpl implements CustomerService {
     @Override
     public String deleteCustomer(Integer customerId) throws UserNotFoundException {
         if (customerRepository.findById(customerId).isEmpty()){
-            return "The Id is not existed";
+            throw new UserNotFoundException();
         }
-        customerRepository.deleteById(customerId);
-        return "Delete Successfully";
+       customerRepository.deleteById(customerId);
+        return "Deleetd Successfully";
     }
 
     @Override

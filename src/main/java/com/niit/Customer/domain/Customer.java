@@ -8,6 +8,8 @@ package com.niit.Customer.domain;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.util.Objects;
+
 @Document
 public class Customer {
     @Id
@@ -66,5 +68,18 @@ public class Customer {
                 ", customerPhoneNo=" + customerPhoneNo +
                 ", product=" + product +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Customer customer = (Customer) o;
+        return customerId == customer.customerId && Objects.equals(customerName, customer.customerName) && Objects.equals(customerPhoneNo, customer.customerPhoneNo) && Objects.equals(product, customer.product);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(customerId, customerName, customerPhoneNo, product);
     }
 }
